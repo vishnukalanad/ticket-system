@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, input} from '@angular/core';
 import {SeatsModel} from "../../core/interfaces/seatsModel";
 import {CommonModule} from "@angular/common";
 import {CurrencyPipe} from "../../core/pipes/currency.pipe";
@@ -9,22 +9,18 @@ import {CurrencyPipe} from "../../core/pipes/currency.pipe";
   imports: [CommonModule, CurrencyPipe],
   templateUrl: './summary.component.html',
   styleUrl: './summary.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SummaryComponent {
   seats = input.required<SeatsModel[]>();
 
-  selectedSeats: SeatsModel[] = [];
-  totalPrice = 0;
-
-  constructor() { }
-
-  ngOnChanges() {
-    this.getSelectedSeats()
+  constructor() {
   }
 
-  getSelectedSeats() {
-    this.selectedSeats = this.seats().filter(s => s.selected);
-    this.totalPrice = this.selectedSeats.reduce((a,b) => a + b.price, 0);
+  get selectedSeats(): SeatsModel[] {
+    return this.seats().filter(s => s.selected);
+  }
+
+  get totalPrice(): number {
+    return this.selectedSeats.reduce((a, b) => a + b.price, 0)
   }
 }

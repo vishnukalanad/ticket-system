@@ -29,10 +29,12 @@ export class AppComponent implements OnInit {
 
   state$: Observable<StateModel | null>;
 
+  // Creates an array of length 8 (row size) and map to alphabets;
   rows = Array.from({length: 8}, (_, i) => {
     return String.fromCharCode(97 + i).toUpperCase();
   });
 
+  // Legends data;
   legends: LegendModel[] = [
     {label: 'Available', color: 'available'},
     {label: 'Selected', color: 'selected'},

@@ -9,6 +9,10 @@ export class SeatService implements ISeatsService {
   constructor() {
   }
 
+  /**
+   * Function to generate seats;
+   * @return - seats list;
+   */
   generateSeats() {
     let rows = 8;
     let cols = 12;
