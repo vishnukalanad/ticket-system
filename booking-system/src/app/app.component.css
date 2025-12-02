@@ -16,6 +16,11 @@
   box-sizing: border-box;
   overflow-x: hidden;
   padding: 2rem 1rem;
+  gap: 3rem;
+}
+
+.small-text{
+  font-size: .8rem;
 }
 
 main {

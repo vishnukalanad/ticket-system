@@ -19,5 +19,6 @@
   <div>
     <p>Total: {{ totalPrice | localCurrency }}</p>
     <button class="button" [disabled]="selectedSeats.length === 0" [class.btndisabled]="selectedSeats.length === 0">Make Payment</button>
+    <p class="message small-text">Seats will be held for 10 mins</p>
   </div>
 </div>
