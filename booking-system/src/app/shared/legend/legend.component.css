@@ -1,0 +1,33 @@
+.legend-seat {
+  width: 26px;
+  height: 26px;
+  border: 1px solid #333;
+  border-radius: 6px;
+}
+
+.legend-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .4rem;
+  margin-top: 2rem;
+}
+
+.available {
+  background: var(--accent-color);
+}
+
+.selected {
+  background: var(--screen-color);
+}
+
+.disabled {
+  background: var(--disabled-color);
+  border: none
+}
+
+.premium {
+  background: var(--accent-color);
+  border: 1px solid var(--screen-color);
+}

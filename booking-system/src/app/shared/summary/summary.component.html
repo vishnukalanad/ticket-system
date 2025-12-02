@@ -1,0 +1,23 @@
+<div class="payment">
+  <div>
+    <h2>Booking Summary</h2>
+    <div class="seats-container">
+      <ng-container *ngFor="let seat of selectedSeats">
+        <div class="seat-item">
+          <div class="seat-info">
+            <p class="no-margin">Seat No: <span class="uppercase">{{  seat.seatCode }}</span></p>
+            <span class="seat-type"> {{ seat.premium ? "PREMIUM" : "REGULAR" }} </span>
+          </div>
+          <span class="price">{{ seat.price | localCurrency }}</span>
+        </div>
+      </ng-container>
+    </div>
+    <ng-container *ngIf="selectedSeats.length === 0">
+      <p class="message">No seats selected</p>
+    </ng-container>
+  </div>
+  <div>
+    <p>Total: {{ totalPrice | localCurrency }}</p>
+    <button class="button" [disabled]="selectedSeats.length === 0" [class.btndisabled]="selectedSeats.length === 0">Make Payment</button>
+  </div>
+</div>

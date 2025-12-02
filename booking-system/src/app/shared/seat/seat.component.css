@@ -1,0 +1,37 @@
+
+
+.seat {
+  width: 32px;
+  height: 32px;
+  background: var(--accent-color);
+  border: 1px solid #333;
+  border-radius: 8px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: .8rem;
+  cursor: pointer;
+}
+
+.seat:hover {
+  background: var(--hover-color);
+}
+
+.seat.selected {
+  background: var(--screen-color);
+  font-weight: bold;
+  /*border: 1px solid var(--screen-color);*/
+}
+
+.seat.disabled {
+  opacity: .2;
+  cursor: not-allowed;
+  pointer-events: none;
+  border: none;
+}
+
+.seat.premium {
+  border: 1px solid var(--screen-color);
+}

@@ -1,0 +1,3 @@
+<div class="seat" [class.selected]="isSelected(seat())" (click)="onSelect(seat())" [class.disabled]="seat().booked" [class.premium]="seat().premium">
+  {{ seat().seat }}
+</div>

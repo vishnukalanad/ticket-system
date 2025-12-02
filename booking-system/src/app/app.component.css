@@ -1,0 +1,179 @@
+:root {
+  --primary-color: #161517;
+  --accent-color: #222;
+  --secondary-color: #888;
+  --screen-color: #f6864e;
+  --hover-color: #292828;
+  --selected-color: #000d5e;
+  --disabled-color: #181819;
+}
+
+.root-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  padding: 2rem 1rem;
+}
+
+main {
+  max-width: 100dvw;
+  min-height: 100dvh;
+  box-sizing: border-box;
+  background: var(--primary-color);
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  position: relative;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.movies-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+
+h2 {
+  margin: 0;
+}
+
+.title {
+  font-size: 2rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--secondary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.separator {
+  position: relative;
+  width: 5px;
+  height: 5px;
+  background: var(--secondary-color);
+  border-radius: 5px;
+}
+
+.container .title, .container .subtitle {
+  text-align: center;
+  margin: 0;
+}
+
+.booking-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  gap: 1rem
+}
+
+.booking-grid {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.screen {
+  height: 5px;
+  background: var(--screen-color);
+  border-radius: 10px 10px 0 0;
+}
+
+.screen-title {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: var(--secondary-color);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.seat-selector {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  width: fit-content;
+  gap: 6px 10px
+}
+
+.empty {
+  height: 50px;
+}
+
+.seat-selector .grid{
+  width: fit-content;
+}
+
+app-seat {
+  display: block;
+  width: fit-content;
+  height: fit-content;
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem
+}
+
+.legend .text {
+  font-size: .9rem;
+  color: var(--secondary-color);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.rows {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 6px 10px
+}
+
+.rows .row {
+  height: 34px;
+  width: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .8rem;
+  color: var(--secondary-color);
+}
+
+@media screen and (max-width: 768px) {
+  .booking-container {
+    grid-template-columns: 100%;
+  }
+
+  .flex {
+    overflow-x: scroll;
+    width: 100%;
+  }
+}
