@@ -5,7 +5,7 @@ import {MoviesService} from "./core/services/movies.service";
 import {Store} from "@ngrx/store";
 import {addMovies, addSeats, toggleSeat} from "./core/state/actions";
 import {StateModel} from "./core/interfaces/stateModel";
-import {Observable} from "rxjs";
+import {Observable, take} from "rxjs";
 import {SeatComponent} from "./shared/seat/seat.component";
 import {ISeatsService, LegendModel, SeatsModel} from "./core/interfaces/seatsModel";
 import {SeatService} from "./core/services/seat.service";
@@ -64,7 +64,7 @@ export class AppComponent implements OnInit {
    * @return {void}
    */
   getMovie() {
-    this.movieService.getMovie().subscribe(movie => {
+    this.movieService.getMovie().pipe(take(1)).subscribe(movie => {
       this.store.dispatch(addMovies({
         movie
       }))
